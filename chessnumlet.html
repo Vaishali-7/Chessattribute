@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+  border: 1px solid black;
+  margin: 20px 20px;
+}
+
+.black {
+  width: 80px;
+  height: 80px;
+  background: black;
+}
+
+.white {
+  width: 80px;
+  height: 80px;
+  background: white;
+}
+
+
+    </style>
+<body>
+<script>
+let table = document.createElement("table");
+for (let i = 0; i < 5; i++) {
+  let tr = document.createElement('tr');
+  for (let j = 0; j < 5; j++) {
+    let td = document.createElement('td');
+    if (i % 2 == j % 2) {
+      td.className = "white";
+      td.addEventListener("click",function()
+                    {
+                        alert(String.fromCharCode(i+65)+""+(j+1));
+                    });
+    } else {
+      td.className = "black";
+      td.addEventListener("click",function()
+                    {
+                        alert(String.fromCharCode(i+65)+""+(j+1));
+                    });
+    }
+    tr.appendChild(td);
+  }
+  table.appendChild(tr);
+}
+
+document.body.appendChild(table);
+</script>
+</body>
+</html>
